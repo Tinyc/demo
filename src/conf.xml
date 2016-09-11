@@ -19,7 +19,6 @@
 	</environments>
 		
 	<mappers>
-		<mapper resource="22222"/>
-		<mapper resource="bbbb"/>
+		<mapper resource="mapper/classMapper.xml"/>
 	</mappers>
 </configuration>
