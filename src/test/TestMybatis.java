@@ -1,19 +1,32 @@
 package test;
 
-import org.apache.ibatis.session.SqlSession;
+import java.util.Date;
+import java.util.List;
+
+import mapper.UserMapper;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import entity.Classes;
-import util.MybatisUtils;
+import entity.User;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("../beans.xml")
 public class TestMybatis {
 
+	@Autowired
+	UserMapper userMapper;
 	@Test
-	public void selectClass(){
-		SqlSession session = MybatisUtils.getSession();
-		String str = "mapper.classMapper.getClass2";
-		Classes cla = session.selectOne(str, 1);
-		System.out.println(cla);
-		session.close();
+	public void addUser(){
+		userMapper.save(new User(-1, "Èöµ©", new Date(), 40000f));
+	}
+	
+	@Test
+	public void selectUser(){
+		List<User> list= userMapper.findAll();
+		System.out.println(list);
 	}
 }	
