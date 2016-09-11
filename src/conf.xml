@@ -20,5 +20,6 @@
 		
 	<mappers>
 		<mapper resource="22222"/>
+		<mapper resource="bbbb"/>
 	</mappers>
 </configuration>
