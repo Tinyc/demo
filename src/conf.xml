@@ -17,7 +17,8 @@
 			</dataSource>
 		</environment>
 	</environments>
-
+		
 	<mappers>
+		<mapper resource="22222"/>
 	</mappers>
 </configuration>
